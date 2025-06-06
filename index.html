@@ -1,1 +1,86 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mae Ann Cimafranca | Web Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Mae</h1>
+    <p class="text-xl md:text-2xl text-gray-600 mb-8">A Web Developer who builds clean, fast, and user-friendly websites.</p>
+    <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+      View My Work
+    </a>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 bg-gray-50 px-4" x-data="portfolio">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <template x-for="project in projects" :key="project.title">
+          <div class="bg-white shadow rounded-lg p-6 text-left">
+            <h3 class="text-xl font-semibold mb-2" x-text="project.title"></h3>
+            <p class="text-gray-600 mb-4" x-text="project.description"></p>
+            <a :href="project.link" class="text-blue-600 hover:underline" target="_blank" rel="noopener">View Project →</a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-4">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+      <p class="text-gray-600 mb-6">I'm currently open to freelance or full-time opportunities. Let's connect!</p>
+      <a href="mailto:john@example.com" class="text-blue-600 font-medium hover:underline">john@example.com</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 py-6 border-t">
+    © 2025 John Doe. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('portfolio', () => ({
+        projects: [
+          {
+            title: 'Slack App Clone',
+            description: 'A simple Slack clone UI using Tailwind and JS.',
+            link: 'https://slack-app-mc.vercel.app/',
+          },
+          {
+            title: 'Product Landing Page',
+            description: 'A responsive landing page with smooth scrolling and features.',
+            link: 'https://product-landing-page-mc.vercel.app/',
+          },
+          {
+            title: 'Momentum Clone',
+            description: 'A minimalist new tab clone inspired by Momentum with time and greetings.',
+            link: 'https://momentum-snowy.vercel.app/',
+          },
+          {
+            title: 'Tribute Page',
+            description: 'A single-page tribute to a historic figure.',
+            link: 'https://tribute-page-mc.vercel.app/',
+          },
+          {
+            title: 'Tic Tac Toe Game',
+            description: 'A classic Tic Tac Toe game built with JavaScript.',
+            link: 'https://tic-tac-toe-nu-ivory.vercel.app/',
+          },
+        ]
+      }))
+    })
+  </script>
+
+</body>
+</html>
