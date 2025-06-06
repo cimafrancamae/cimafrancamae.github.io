@@ -3,17 +3,21 @@ module.exports = {
   content: ["./index.html"],
   theme: {
     extend: {
-      colors: {
-        beige: "#F9F5EF",       // soft neutral background
-        clay: "#836953",        // warm muted brown
-        sage: "#DDE2C6",        // gentle green
-        terracotta: "#D7745B",  // rich earthy orange
-        brown: "#4E3629",       // strong dark base
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
       },
-      fontFamily: {
-        sans: ["Inter", "sans-serif"], 
+      animation: {
+        fadeIn: 'fadeIn 1s ease-out forwards',
+        slideUp: 'slideUp 0.8s ease-out forwards',
       },
     },
   },
   plugins: [],
-};
+}
