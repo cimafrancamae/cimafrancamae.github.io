@@ -13,7 +13,7 @@
   <!-- Hero Section -->
   <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
     <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Mae</h1>
-    <p class="text-xl md:text-2xl text-gray-600 mb-8">A Web Developer who builds clean, fast, and user-friendly websites.</p>
+    <p class="text-xl md:text-2xl text-clay mb-8">A Web Developer who builds clean, fast, and user-friendly websites.</p>
     <a href="#projects" class="bg-terracotta text-white px-6 py-3 rounded-full hover:bg-clay transition">
       View My Work
     </a>
@@ -27,7 +27,7 @@
         <template x-for="project in projects" :key="project.title">
           <div class="bg-white text-brown shadow rounded-lg p-6">
             <h3 class="text-xl font-semibold mb-2" x-text="project.title"></h3>
-            <p class="text-gray-600 mb-4" x-text="project.description"></p>
+            <p class="text-clay mb-4" x-text="project.description"></p>
             <a :href="project.link" class="text-terracotta hover:underline" target="_blank" rel="noopener">View Project →</a>
           </div>
         </template>
@@ -38,14 +38,18 @@
   <!-- Contact Section -->
   <section id="contact" class="py-16 px-4 bg-beige text-brown">
     <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-      <p class="text-clay mb-6">I'm currently open to freelance or full-time opportunities. Let's connect!</p>
+      <h2 class="text-3xl font-bold mb-4">Let’s Work Together</h2>
+      <p class="text-clay mb-6">
+        I'm open to freelance and full-time opportunities — especially with small businesses and creative teams.
+        Have a project in mind? Let's chat!
+      </p>
       <a href="mailto:info@scrippt.dev" class="text-terracotta font-medium hover:underline">info@scrippt.dev</a>
     </div>
   </section>
 
+
   <!-- Footer -->
-  <footer class="text-center text-gray-500 py-6 border-t">
+  <footer class="text-center text-clay py-6 border-t border-clay bg-beige">
     © 2025 Mae Ann Cimafranca. All rights reserved.
   </footer>
 
