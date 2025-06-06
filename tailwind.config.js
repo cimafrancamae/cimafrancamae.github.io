@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.html"],
+  content: ["./index.html"],
   theme: {
     extend: {
       colors: {
@@ -11,7 +11,7 @@ module.exports = {
         brown: "#4E3629",       // strong dark base
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"], // or your preferred modern font
+        sans: ["Inter", "sans-serif"], 
       },
     },
   },
