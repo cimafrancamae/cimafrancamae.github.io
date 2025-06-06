@@ -22,7 +22,7 @@
   <!-- Projects Section -->
   <section id="projects" class="py-16 bg-sage px-4 text-white animate-slideUp delay-300" x-data="portfolio">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-10">Projects</h2>
+      <h2 class="text-3xl font-bold mb-10">Sample Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <template x-for="project in projects" :key="project.title">
           <div class="bg-white text-brown shadow rounded-lg p-6">
@@ -82,6 +82,12 @@
             description: 'A classic Tic Tac Toe game built with JavaScript.',
             link: 'https://tic-tac-toe-nu-ivory.vercel.app/',
           },
+          {
+            title: 'Responsive Chessboard',
+            description: 'A responsive chessboard layout built using Flexbox and CSS Grid.',
+            link: 'https://responsive-chessboard-grid.vercel.app/'
+          },
+
         ]
       }))
     })
