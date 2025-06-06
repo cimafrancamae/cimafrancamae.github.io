@@ -13,21 +13,21 @@
   <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
     <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Mae</h1>
     <p class="text-xl md:text-2xl text-gray-600 mb-8">A Web Developer who builds clean, fast, and user-friendly websites.</p>
-    <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+    <a href="#projects" class="bg-terracotta text-white px-6 py-3 rounded-full hover:bg-clay transition">
       View My Work
     </a>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-16 bg-gray-50 px-4" x-data="portfolio">
+  <section id="projects" class="py-16 bg-sage px-4 text-white" x-data="portfolio">
     <div class="max-w-5xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-10">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <template x-for="project in projects" :key="project.title">
-          <div class="bg-white shadow rounded-lg p-6 text-left">
+          <div class="bg-white text-brown shadow rounded-lg p-6">
             <h3 class="text-xl font-semibold mb-2" x-text="project.title"></h3>
             <p class="text-gray-600 mb-4" x-text="project.description"></p>
-            <a :href="project.link" class="text-blue-600 hover:underline" target="_blank" rel="noopener">View Project →</a>
+            <a :href="project.link" class="text-terracotta hover:underline" target="_blank" rel="noopener">View Project →</a>
           </div>
         </template>
       </div>
@@ -35,11 +35,11 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 px-4">
+  <section id="contact" class="py-16 px-4 bg-beige text-brown">
     <div class="max-w-xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-      <p class="text-gray-600 mb-6">I'm currently open to freelance or full-time opportunities. Let's connect!</p>
-      <a href="mailto:info@scrippt.dev" class="text-blue-600 font-medium hover:underline">info@scrippt.dev</a>
+      <p class="text-clay mb-6">I'm currently open to freelance or full-time opportunities. Let's connect!</p>
+      <a href="mailto:info@scrippt.dev" class="text-terracotta font-medium hover:underline">info@scrippt.dev</a>
     </div>
   </section>
 
