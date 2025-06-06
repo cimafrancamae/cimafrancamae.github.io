@@ -17,6 +17,11 @@ module.exports = {
         fadeIn: 'fadeIn 1s ease-out forwards',
         slideUp: 'slideUp 0.8s ease-out forwards',
       },
+      animationDelay: {
+        100: '100ms',
+        200: '200ms',
+        300: '300ms',
+      },
     },
   },
   plugins: [],
