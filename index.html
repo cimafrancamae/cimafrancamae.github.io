@@ -28,13 +28,14 @@
     <div class="max-w-5xl mx-auto text-center animate-slideUp" style="animation-delay: 0.2s">
       <h2 class="text-3xl font-bold mb-10">Sample Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <template x-for="project in projects" :key="project.title">
+        <template x-for="(project, index) in projects" :key="project.title">
           <div class="bg-white text-brown shadow rounded-lg p-6 animate-slideUp" :style="`animation-delay: ${(index + 1) * 0.1}s`">
             <h3 class="text-xl font-semibold mb-2" x-text="project.title"></h3>
             <p class="text-clay mb-4" x-text="project.description"></p>
             <a :href="project.link" class="text-terracotta hover:underline" target="_blank" rel="noopener">View Project →</a>
           </div>
         </template>
+
       </div>
     </div>
   </section>
