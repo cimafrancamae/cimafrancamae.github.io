@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html"],
+  content: ["./*.html", "./**/*.html"],
   theme: {
     extend: {
+        fontFamily: {
+        sans: ['"Open Sans"', 'ui-sans-serif', 'system-ui'],
+      },
+      colors: {
+        beige: '#f5f1e9',       
+        brown: '#6b4c3b',
+        clay: '#b66e41',
+        terracotta: '#e07b5d',
+        sage: '#9caf88',
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
