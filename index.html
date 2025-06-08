@@ -8,20 +8,49 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <style>
+    @keyframes fadeScaleUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-fadeScaleUp {
+      animation: fadeScaleUp 0.6s ease-out forwards;
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
   <div class="relative">
     <!-- Hero Section (sticky) -->
-    <section class="sticky top-0 h-screen flex flex-col items-center justify-center text-center px-4 bg-beige text-brown">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-slideUp delay-200">Hi, I'm Mae 👋</h1>
-      <p class="text-xl md:text-2xl text-clay mb-8 animate-slideUp delay-400">
+    <section class="sticky top-0 h-screen flex flex-col items-center justify-center text-center px-6 md:px-12 bg-gradient-to-br from-beige to-yellow-50 text-brown space-y-8 md:space-y-12">
+      <h1 class="text-4xl md:text-6xl font-extrabold uppercase tracking-widest drop-shadow-sm animate-fadeScaleUp delay-200">
+        Hi, I'm Mae 👋
+      </h1>
+      
+      <div class="w-20 h-1 bg-terracotta rounded mx-auto"></div>
+      
+      <p class="text-xl md:text-2xl text-clay max-w-lg animate-fadeScaleUp delay-400">
         Digital craftsperson - thoughtful design, honest code, and absolutely no fluff.
       </p>
-      <a href="#projects" class="bg-terracotta text-white px-6 py-3 rounded-full hover:bg-clay transition-colors duration-300 ease-in-out animate-slideUp delay-600">
+      
+      <a href="#projects" class="bg-terracotta text-white px-6 py-3 rounded-full hover:bg-clay transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg animate-fadeScaleUp delay-600">
         View My Work
       </a>
+      
+      <div class="mt-8 animate-bounce text-terracotta">
+        <i class="fas fa-chevron-down text-2xl"></i>
+      </div>
     </section>
+
+
 
     <!-- Projects Section (overlapping on scroll) -->
     <section id="projects" class="relative bg-sage text-white pt-32 pb-40">
