@@ -42,7 +42,7 @@
         <div class="max-w-5xl mx-auto text-center">
           <h2 class="text-3xl font-bold mb-10 animate-slideUp delay-200">Sample Projects</h2>
 
-          <!-- Filter (optional) -->
+          <!-- Filter -->
           <div class="flex justify-center gap-4 mb-8 flex-wrap">
             <button
               class="bg-white text-brown px-4 py-2 rounded-full text-sm font-medium shadow hover:bg-clay hover:text-white transition"
@@ -65,7 +65,11 @@
                 role="region"
                 :aria-label="`Project: ${project.title}`"
               >
-                <img :src="project.image" alt="" class="w-full h-40 object-cover rounded-md mb-4" />
+                <div class="relative h-40 rounded-md overflow-hidden mb-4 group">
+                  <img :src="project.image" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition duration-300" />
+                  <div class="absolute inset-0 bg-beige/70 mix-blend-multiply pointer-events-none"></div>
+                </div>
+
 
                 <h3 class="text-xl font-semibold mb-2" x-text="project.title"></h3>
 
