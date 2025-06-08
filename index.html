@@ -39,18 +39,47 @@
     <section id="projects" class="relative bg-sage text-white pt-32 pb-40">
       <div x-data="portfolio">
         <div class="max-w-5xl mx-auto text-center">
-          <!-- Push content down so it starts after the hero -->
           <h2 class="text-3xl font-bold mb-10 animate-slideUp delay-200">Sample Projects</h2>
+
+          <!-- Filter (optional) -->
+          <div class="flex justify-center gap-4 mb-8 flex-wrap">
+            <button
+              class="bg-white text-brown px-4 py-2 rounded-full text-sm font-medium shadow hover:bg-clay hover:text-white transition"
+              @click="filter = 'all'"
+            >All</button>
+            <template x-for="category in categories" :key="category">
+              <button
+                class="bg-white text-brown px-4 py-2 rounded-full text-sm font-medium shadow hover:bg-clay hover:text-white transition"
+                @click="filter = category"
+                x-text="category"
+              ></button>
+            </template>
+          </div>
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <template x-for="(project, index) in projects" :key="project.title">
-              <div
-                class="bg-white text-brown shadow rounded-lg p-6 animate-slideUp transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-lg cursor-pointer"
+            <template x-for="(project, index) in filteredProjects" :key="project.title">
+              <article
+                class="bg-white text-brown rounded-lg border border-gray-200 shadow-sm p-6 animate-slideUp transform transition hover:scale-[1.03] hover:shadow-lg cursor-pointer"
                 :style="`animation-delay: ${(index + 1) * 0.1}s`"
+                role="region"
+                :aria-label="`Project: ${project.title}`"
               >
+                <img :src="project.image" alt="" class="w-full h-40 object-cover rounded-md mb-4" />
+
                 <h3 class="text-xl font-semibold mb-2" x-text="project.title"></h3>
+
+                <div class="flex flex-wrap gap-2 mb-4" aria-label="Technologies used">
+                  <template x-for="tech in project.techStack" :key="tech">
+                    <span class="bg-terracotta text-white px-2 py-1 rounded-full text-xs font-semibold" x-text="tech"></span>
+                  </template>
+                </div>
+
                 <p class="text-clay mb-4" x-text="project.description"></p>
-                <a :href="project.link" class="text-terracotta hover:underline" target="_blank" rel="noopener">View Project →</a>
-              </div>
+
+                <a :href="project.link" class="text-terracotta hover:underline" target="_blank" rel="noopener" :title="`View project ${project.title}`">
+                  View Project →
+                </a>
+              </article>
             </template>
           </div>
         </div>
@@ -99,38 +128,63 @@
   <script>
     document.addEventListener('alpine:init', () => {
       Alpine.data('portfolio', () => ({
+        filter: 'all',
+        categories: ['Static', 'Web App'],
         projects: [
           {
             title: 'Slack App Clone',
             description: 'A simple Slack clone UI using Tailwind and JS.',
             link: 'https://slack-app-mc.vercel.app/',
+            image: 'assets/slack-app-clone.png',
+            techStack: ['Tailwind', 'JavaScript'],
+            category: 'Web App'
           },
           {
             title: 'Product Landing Page',
             description: 'A responsive landing page with smooth scrolling and features.',
             link: 'https://product-landing-page-mc.vercel.app/',
+            image: 'assets/product-landing-page.png',
+            techStack: ['HTML', 'Tailwind', 'JavaScript'],
+            category: 'Static'
           },
           {
             title: 'Momentum Clone',
             description: 'A minimalist new tab clone inspired by Momentum with time and greetings.',
             link: 'https://momentum-snowy.vercel.app/',
+            image: 'assets/momentum-app.png',
+            techStack: ['HTML', 'JavaScript', 'CSS'],
+            category: 'Web App'
           },
           {
             title: 'Tribute Page',
             description: 'A single-page tribute to a historic figure.',
             link: 'https://tribute-page-mc.vercel.app/',
+            image: 'assets/tribute-page.png',
+            techStack: ['HTML', 'CSS'],
+            category: 'Static'
           },
           {
             title: 'Tic Tac Toe Game',
             description: 'A classic Tic Tac Toe game built with JavaScript.',
             link: 'https://tic-tac-toe-nu-ivory.vercel.app/',
+            image: 'assets/tic-tac-toe.png',
+            techStack: ['HTML', 'CSS', 'JavaScript'],
+            category: 'Web App'
           },
           {
             title: 'Responsive Chessboard',
             description: 'A responsive chessboard layout built using Flexbox and CSS Grid.',
-            link: 'https://responsive-chessboard-grid.vercel.app/'
-          },
-        ]
+            link: 'https://responsive-chessboard-grid.vercel.app/',
+            image: '/assets/chessboard.png',
+            techStack: ['HTML', 'CSS', 'Flexbox', 'Grid'],
+            category: 'Static'
+          }
+        ],
+        get filteredProjects() {
+          return this.filter === 'all'
+            ? this.projects
+            : this.projects.filter(p => p.category === this.filter);
+        }
       }))
     })
   </script>
