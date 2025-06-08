@@ -16,6 +16,7 @@ module.exports = {
     'delay-200',
     'delay-400',
     'delay-600',
+    'shadow-[0_-20px_30px_-10px_rgba(0,0,0,0.2)]',
   ],
   theme: {
     extend: {
