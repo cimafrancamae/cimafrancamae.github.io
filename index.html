@@ -11,38 +11,43 @@
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
-  <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-beige text-brown animate-fadeIn">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-slideUp delay-200 opacity-0">Hi, I'm Mae 👋</h1>
-    <p class="text-xl md:text-2xl text-clay mb-8 animate-slideUp delay-400 opacity-0">
-      I build clean, fast, and user-friendly websites.
-    </p>
-    <a href="#projects" class="bg-terracotta text-white px-6 py-3 rounded-full hover:bg-clay transition-colors duration-300 ease-in-out animate-slideUp delay-600 opacity-0">
-      View My Work
-    </a>
-  </section>
+  <div class="relative">
+    <!-- Hero Section (sticky) -->
+    <section class="sticky top-0 h-screen flex flex-col items-center justify-center text-center px-4 bg-beige text-brown">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-slideUp delay-200">Hi, I'm Mae 👋</h1>
+      <p class="text-xl md:text-2xl text-clay mb-8 animate-slideUp delay-400">
+        I build clean, fast, and user-friendly websites.
+      </p>
+      <a href="#projects" class="bg-terracotta text-white px-6 py-3 rounded-full hover:bg-clay transition-colors duration-300 ease-in-out animate-slideUp delay-600">
+        View My Work
+      </a>
+    </section>
 
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-16 bg-sage px-4 text-white" x-data="portfolio">
-    <div class="max-w-5xl mx-auto text-center animate-slideUp" style="animation-delay: 0.2s">
-      <h2 class="text-3xl font-bold mb-10">Sample Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <template x-for="(project, index) in projects" :key="project.title">
-          <div class="bg-white text-brown shadow rounded-lg p-6 animate-slideUp" :style="`animation-delay: ${(index + 1) * 0.1}s`">
-            <h3 class="text-xl font-semibold mb-2" x-text="project.title"></h3>
-            <p class="text-clay mb-4" x-text="project.description"></p>
-            <a :href="project.link" class="text-terracotta hover:underline" target="_blank" rel="noopener">View Project →</a>
+    <!-- Projects Section (overlapping on scroll) -->
+    <section id="projects" class="relative bg-sage text-white pt-32 pb-40">
+      <div x-data="portfolio">
+        <div class="max-w-5xl mx-auto text-center">
+          <!-- Push content down so it starts after the hero -->
+          <h2 class="text-3xl font-bold mb-10 animate-slideUp delay-200">Sample Projects</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <template x-for="(project, index) in projects" :key="project.title">
+              <div class="bg-white text-brown shadow rounded-lg p-6 animate-slideUp" 
+                  :style="`animation-delay: ${(index + 1) * 0.1}s`">
+                <h3 class="text-xl font-semibold mb-2" x-text="project.title"></h3>
+                <p class="text-clay mb-4" x-text="project.description"></p>
+                <a :href="project.link" class="text-terracotta hover:underline" target="_blank" rel="noopener">View Project →</a>
+              </div>
+            </template>
           </div>
-        </template>
-
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
+
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 px-4 bg-beige text-brown animate-slideUp" style="animation-delay: 0.2s">
-    <div class="max-w-xl mx-auto text-center">
+  <section id="contact" class="py-16 px-4 bg-beige text-brown">
+    <div class="max-w-xl mx-auto text-center animate-slideUp delay-200">
       <h2 class="text-3xl font-bold mb-4">Let’s Work Together</h2>
       <p class="text-clay mb-6">
         I'm open to freelance and full-time opportunities — especially with small businesses and creative teams.
@@ -71,13 +76,12 @@
     </div>
   </section>
 
-
-
   <!-- Footer -->
   <footer class="text-center text-clay py-6 border-t border-clay bg-beige">
     © 2025 Mae Ann Cimafranca. All rights reserved.
   </footer>
 
+  <!-- Alpine Data -->
   <script>
     document.addEventListener('alpine:init', () => {
       Alpine.data('portfolio', () => ({
@@ -112,7 +116,6 @@
             description: 'A responsive chessboard layout built using Flexbox and CSS Grid.',
             link: 'https://responsive-chessboard-grid.vercel.app/'
           },
-
         ]
       }))
     })
