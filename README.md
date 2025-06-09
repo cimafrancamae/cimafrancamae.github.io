@@ -8,7 +8,6 @@ This is a simple, static site built with HTML, Tailwind CSS, and Alpine.js to sh
 - Clean, mobile-friendly layout
 - Project list rendered dynamically using Alpine.js
 - Easy to update by editing a single `projects` array
-- Built-in dashboard (`dashboard.html`) for generating project entries
 
 ## Live Site
 
