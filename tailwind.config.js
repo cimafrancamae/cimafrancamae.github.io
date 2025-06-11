@@ -29,6 +29,10 @@ module.exports = {
         clay: '#b66e41',
         terracotta: '#e07b5d',
         sage: '#9caf88',
+        sun: '#ffc64a',
+        sand: '#f2f2f2',
+        night: '#0f0f0f',
+        stone: '#d1d1d1'
       },
       keyframes: {
         slideUp: {
