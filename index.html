@@ -132,7 +132,6 @@
                       alt=""
                       class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-300"
                     />
-                    <!-- <div class="absolute inset-0 bg-beige/70 mix-blend-multiply pointer-events-none"></div> -->
                   </div>
                 </article>
               </template>
@@ -189,7 +188,7 @@
     document.addEventListener('alpine:init', () => {
       Alpine.data('portfolio', () => ({
         filter: 'all',
-        categories: ['Static', 'Web App'],
+        categories: ['Static', 'Web App','Collaborative'],
         projects: [
           {
             title: 'Slack App Clone',
@@ -197,7 +196,7 @@
             link: 'src/pages/slack-app-clone.html',
             image: '/assets/chat-bg.png',
             techStack: ['HTML','React JS','SASS', 'Chakra UI'],
-            category: 'Web App'
+            category: ['Web App']
           },
           {
             title: 'Product Landing Page',
@@ -205,7 +204,7 @@
             link: 'https://product-landing-page-mc.vercel.app/',
             image: '/assets/home-hero-dlines@2x.png',
             techStack: ['HTML', 'JavaScript', 'SASS'],
-            category: 'Static'
+            category: ['Static']
           },
           {
             title: 'Momentum Clone',
@@ -213,7 +212,7 @@
             link: 'https://momentum-snowy.vercel.app/',
             image: '/assets/momentum-bg.png',
             techStack: ['HTML', 'JavaScript', 'CSS', 'SASS'],
-            category: 'Web App'
+            category: ['Web App']
           },
           {
             title: 'Tic Tac Toe Game',
@@ -221,7 +220,7 @@
             link: 'https://tic-tac-toe-nu-ivory.vercel.app/',
             image: 'assets/tic-tac-toe.png',
             techStack: ['HTML', 'SASS', 'JavaScript'],
-            category: 'Web App'
+            category: ['Web App']
           },
           {
             title: 'Task Manager',
@@ -229,13 +228,21 @@
             link: 'src/pages/task-manager.html',
             image: 'assets/task-man.png',
             techStack: ['Ruby on Rails', 'PostgreSQL', 'Tailwind CSS', 'Devise Auth'],
-            category: 'Web App'
+            category: ['Web App']
+          },
+          {
+            title: 'SkillSetGo - Booking App',
+            description: 'A full-stack appointment scheduling app tailored for freelancers and clients in the Philippines.',
+            link: 'src/pages/booking-app.html',
+            image: 'assets/skillsetgo-logo.png',
+            techStack: ['Ruby on Rails', 'PostgreSQL', 'Tailwind CSS', 'Devise Auth'],
+            category: ['Collaborative','Web App']
           },
         ],
         get filteredProjects() {
           return this.filter === 'all'
             ? this.projects
-            : this.projects.filter(p => p.category === this.filter);
+            : this.projects.filter(p => p.category.includes(this.filter));
         },
         canScrollLeft: false,
         canScrollRight: true,
