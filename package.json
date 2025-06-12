@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.5",
     "sass": "^1.89.2",
-    "tailwindcss": "^4.1.8",
+    "tailwindcss": "^4.1.10",
     "vite": "^6.3.5"
   },
   "dependencies": {
@@ -29,7 +31,6 @@
     "node-addon-api": "^7.1.1",
     "picocolors": "^1.1.1",
     "picomatch": "^2.3.1",
-    "postcss": "^8.5.5",
     "readdirp": "^4.1.2",
     "rollup": "^4.43.0",
     "source-map-js": "^1.2.1",
