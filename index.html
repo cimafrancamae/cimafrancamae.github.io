@@ -8,51 +8,44 @@
   <link href="/dist/output.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
-  <script type="module" src="/src/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-white text-gray-800">
 
   <div x-data="portfolio()" x-init="init()"  class="relative">
     <!-- Hero Section (sticky) -->
-    <section class="sticky top-0 h-screen flex flex-col items-center justify-center text-center px-6 md:px-12 bg-sand text-brown space-y-8 md:space-y-12">
-      <h1 class="text-4xl md:text-6xl font-extrabold uppercase tracking-widest">
-        <div class="inline-flex items-center">
+    <section class="sticky top-0 h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-12 bg-sand text-brown gap-6 sm:gap-8 md:gap-12">
+      <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold uppercase tracking-widest">
+        <div class="inline-flex flex-wrap items-center justify-center">
           <span class="whitespace-nowrap">Hi, I'm&nbsp;</span>
-          <!-- <span class="typewriter">
-            <span class="text first">Mae</span>
-            <span class="text second">Web Developer</span>
-            <span class="text third">Bibliophile</span>
-          </span> -->
           <div class="typing-slider text-center font-mono font-bold uppercase relative">
             <p class="typing-slide delay-0" data-letters="16">Mae Cimafranca</p>
             <p class="typing-slide delay-1" data-letters="23">a Web Developer</p>
-            <p class="typing-slide delay-2" data-letters="12">and a lot more.</p>
+            <p class="typing-slide delay-2" data-letters="12">& a lot more.</p>
           </div>
-
         </div>
       </h1>
-      
-      <div class="w-20 h-1 bg-terracotta rounded mx-auto"></div>
-      
+
+      <div class="w-16 sm:w-20 h-1 bg-terracotta rounded mx-auto"></div>
+
       <p class="text-xl md:text-2xl text-clay max-w-lg">
         Digital craftsperson - thoughtful design, honest code, and absolutely no fluff.
       </p>
-      
+
       <a href="#projects" class="bg-terracotta text-white px-6 py-3 rounded-full hover:bg-clay transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
         View My Work
       </a>
-      
-      <div class="mt-8 animate-bounce text-terracotta">
-        <i class="fas fa-chevron-down text-2xl"></i>
+
+      <div class="mt-4 sm:mt-8 animate-bounce text-terracotta">
+        <i class="fas fa-chevron-down text-xl sm:text-2xl"></i>
       </div>
     </section>
-
 
 
     <!-- Projects Section (overlapping on scroll) -->
     <div class="h-10 bg-clay shadow-[0_-20px_30px_-10px_rgba(0,0,0,0.2)] z-0 relative -mt-18 rounded-t-3xl"></div>
       <section id="projects" class="relative bg-clay text-white pt-32 pb-40">
-        <div class="overflow-hidden">
+        <div x-data="portfolio()" x-init="init()" class="overflow-hidden">
           <div class="flex gap-4 px-20 mb-10">
             <h2 class="text-5xl font-bold animate-slideUp delay-200">Projects</h2>
             <!-- Filters -->
@@ -194,5 +187,106 @@
       </p>
     </div>
   </footer>
+
+   <!-- Alpine Data -->
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('portfolio', () => ({
+        filter: 'all',
+        categories: ['Static', 'Web App','Collaborative'],
+        projects: [
+          {
+            title: 'Slack App Clone',
+            description: 'A simple Slack clone UI using React JS and Chakra UI.',
+            link: 'src/pages/slack-app-clone.html',
+            image: '/assets/chat-bg.png',
+            techStack: ['HTML','React JS','SASS', 'Chakra UI'],
+            category: ['Web App']
+          },
+          {
+            title: 'Product Landing Page',
+            description: 'A responsive landing page with smooth scrolling and features.',
+            link: 'https://product-landing-page-mc.vercel.app/',
+            image: '/assets/home-hero-dlines@2x.png',
+            techStack: ['HTML', 'JavaScript', 'SASS'],
+            category: ['Static']
+          },
+          {
+            title: 'Momentum Clone',
+            description: 'A minimalist new tab clone inspired by Momentum with time, weather, quotes and greetings.',
+            link: 'https://momentum-snowy.vercel.app/',
+            image: '/assets/momentum-bg.png',
+            techStack: ['HTML', 'JavaScript', 'CSS', 'SASS'],
+            category: ['Web App']
+          },
+          {
+            title: 'Tic Tac Toe Game',
+            description: 'A classic Tic Tac Toe game built with JavaScript.',
+            link: 'https://tic-tac-toe-nu-ivory.vercel.app/',
+            image: 'assets/tic-tac-toe.png',
+            techStack: ['HTML', 'SASS', 'JavaScript'],
+            category: ['Web App']
+          },
+          {
+            title: 'Task Manager',
+            description: 'A full‑stack task management web application built with Ruby on Rails',
+            link: 'src/pages/task-manager.html',
+            image: 'assets/task-man.png',
+            techStack: ['Ruby on Rails', 'PostgreSQL', 'Tailwind CSS', 'Devise Auth'],
+            category: ['Web App']
+          },
+          {
+            title: 'SkillSetGo - Booking App',
+            description: 'A full-stack appointment scheduling app tailored for freelancers and clients in the Philippines.',
+            link: 'src/pages/booking-app.html',
+            image: 'assets/skillsetgo-logo.png',
+            techStack: ['Ruby on Rails', 'PostgreSQL', 'Tailwind CSS', 'Devise Auth'],
+            category: ['Collaborative','Web App']
+          },
+          {
+            title: 'AvionFi - Trading App',
+            description: 'A full‑stack stock trading application that leverages real-world stock market data from the IEX API.',
+            link: 'src/pages/trading-app.html',
+            image: 'assets/trading.png',
+            techStack: ['Ruby on Rails'],
+            category: ['Collaborative','Web App']
+          },
+        ],
+        get filteredProjects() {
+          return this.filter === 'all'
+            ? this.projects
+            : this.projects.filter(p => p.category.includes(this.filter));
+        },
+        canScrollLeft: false,
+        canScrollRight: true,
+
+        scrollLeft() {
+          this.$refs.projectScroll.scrollBy({ left: -300, behavior: 'smooth' });
+          setTimeout(() => this.checkScroll(), 350); // Wait for animation to complete
+        },
+
+        scrollRight() {
+          this.$refs.projectScroll.scrollBy({ left: 300, behavior: 'smooth' });
+          setTimeout(() => this.checkScroll(), 350);
+        },
+
+        checkScroll() {
+          const el = this.$refs.projectScroll;
+          if (!el) return;
+
+          const scrollLeft = Math.round(el.scrollLeft);
+          const maxScrollLeft = el.scrollWidth - el.clientWidth;
+
+          this.canScrollLeft = scrollLeft > 5;
+          this.canScrollRight = scrollLeft < maxScrollLeft - 5;
+        },
+        init() {
+          this.$nextTick(() => {
+            this.checkScroll();
+          });
+        }
+      }))
+    })
+  </script>
 </body>
 </html>
