@@ -17,6 +17,7 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "alpinejs": "^3.14.9",
     "braces": "^3.0.3",
     "chokidar": "^4.0.3",
     "detect-libc": "^1.0.3",
