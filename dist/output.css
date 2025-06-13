@@ -819,6 +819,10 @@ video {
   border-top-right-radius: 1.5rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-t {
   border-top-width: 1px;
 }
@@ -1059,10 +1063,6 @@ video {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.delay-0 {
-  transition-delay: 0s;
 }
 
 .delay-200 {
