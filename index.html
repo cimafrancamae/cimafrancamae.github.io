@@ -77,10 +77,10 @@
             x-transition:leave-start="opacity-100 translate-y-0"
             x-transition:leave-end="opacity-0 translate-y-2"
             @click="scrollLeft"
-            class="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-white text-4xl p-2 rounded-full shadow hover:bg-night hover:text-white transition-opacity opacity-0 group-hover:opacity-100"
+            class="absolute left-0 top-1/4 -translate-y-1/2 z-10 text-white text-4xl p-4 rounded-full hover:shadow-4xl hover:text-white transition-opacity opacity-0 group-hover:opacity-100"
             aria-label="Scroll left"
           >
-            ←
+            <i class="fas fa-chevron-left text-xl sm:text-8xl shadow-8xl animate-pulse animate-infinite animate-delay-[1ms]"></i>
           </button>
 
           <!-- Right Arrow -->
@@ -93,10 +93,10 @@
             x-transition:leave-start="opacity-100 translate-y-0"
             x-transition:leave-end="opacity-0 translate-y-2"
             @click="scrollRight"
-            class="absolute right-0 top-1/2 -translate-y-1/2 z-10  text-white text-4xl p-2 rounded-full shadow hover:bg-night hover:text-white transition-opacity opacity-0 group-hover:opacity-100"
+            class="absolute right-0 top-1/4 -translate-y-1/2 z-10  text-white text-4xl p-4 rounded-full hover:shadow-4xl hover:text-white transition-opacity opacity-0 group-hover:opacity-100"
             aria-label="Scroll right"
           >
-            →
+            <i class="fas fa-chevron-right text-xl sm:text-8xl shadow-8xl animate-pulse animate-infinite animate-delay-[1ms]"></i>
           </button>
 
           <div

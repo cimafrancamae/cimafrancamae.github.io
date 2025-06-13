@@ -582,8 +582,8 @@ video {
   top: 0px;
 }
 
-.top-1\/2 {
-  top: 50%;
+.top-1\/4 {
+  top: 25%;
 }
 
 .z-0 {
@@ -784,6 +784,16 @@ video {
   animation: fade-in-up 3s ease-in-out;
 }
 
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 @keyframes slideUp {
   0% {
     transform: translateY(20px);
@@ -922,6 +932,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .p-6 {
@@ -1261,6 +1275,11 @@ video {
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .sm\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
   }
 
   .sm\:text-base {
