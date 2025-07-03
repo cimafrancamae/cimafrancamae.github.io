@@ -2,7 +2,8 @@
 module.exports = {
   content: [
       "./index.html",
-      "./src/**/*.{js,ts,jsx,tsx}"
+      "./src/**/*.{js,ts,jsx,tsx}",
+      "./src/**/*.html",
     ],
   safelist: [
     'h-[200vh]',
@@ -32,10 +33,15 @@ module.exports = {
         clay: '#b66e41',
         terracotta: '#e07b5d',
         sage: '#9caf88',
-        sun: '#ffc64a',
+        sun: '#f5d17f',
         sand: '#f2f2f2',
         night: '#0f0f0f',
-        stone: '#d1d1d1'
+        stone: '#d1d1d1',
+        apple: '#cb363b',
+        plum: '#041244',
+        lavender: '#8c64d6',
+        dark: '#1f090f',
+        rose: '#e55ec3',
       },
       keyframes: {
         slideUp: {
